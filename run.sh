@@ -37,7 +37,7 @@ python train_spiral.py \
     --num_envs 1 \
     --rollout_batch_size_per_device 16 \
     --pi_buffer_maxlen_per_device 16 \
-    --pretrain Qwen/Qwen3-4B-Base \
+    --pretrain Qwen/Qwen3-0.6B-Base \
     --enable_prefix_caching \
     --collocate \
     --vllm_sleep \
