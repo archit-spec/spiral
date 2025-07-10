@@ -29,14 +29,14 @@ python train_spiral.py \
     --eval_use_llm_obs_wrappers False True \
     --eval_split all \
     --gamma 1 \
-    --gpus 8 \
+    --gpus 1 \
     --gradient-checkpointing \
     --num_samples 1 \
-    --rollout_batch_size 128 \
+    --rollout_batch_size 4 \
     --dump_game_state_every 1 \
     --num_envs 1 \
-    --rollout_batch_size_per_device 16 \
-    --pi_buffer_maxlen_per_device 16 \
+    --rollout_batch_size_per_device 4 \
+    --pi_buffer_maxlen_per_device 4 \
     --pretrain Qwen/Qwen3-0.6B-Base \
     --enable_prefix_caching \
     --collocate \
@@ -46,23 +46,23 @@ python train_spiral.py \
     --learning_rate 0.000001 \
     --lr_scheduler constant \
     --lr_warmup_ratio 0 \
-    --num_ppo_epochs 2 \
-    --train_batch_size 128 \
-    --train_batch_size_per_device 1 \
+    --num_ppo_epochs 100 \
+    --train_batch_size 4 \
+    --train_batch_size_per_device 4 \
     --beta 0 \
     --max_model_len 12800 \
     --generate_max_length 4096 \
     --max_context_length 32768 \
     --temperature 1.0 \
     --top_p 1 \
-    --eval_steps 16 \
+    --eval_steps 30 \
     --save_steps -1 \
-    --eval_games 16 \
+    --eval_games 100 \
     --eval_temperature 0.6 \
     --eval_top_p 0.95 \
     --eval_generate_max_length 4096 \
     --max_train 51200 \
-    --max_save_num 30 \
+    --max_save_num 99 \
     --use-wb \
     --wb-run-name spiral-qwen3-4b-base-kp-4k-self-play \
     --wb_project spiral
